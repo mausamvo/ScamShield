@@ -1,25 +1,37 @@
-import logo from './logo.svg';
-import './App.css';
+import "./App.css";
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <div>
+        <h1>ScamShield</h1>
+      </div>
+
+      <div className="centered-div">
+        <div style={{ width: "100%" }}>
+          <input
+            className="email"
+            text="email"
+            placeholder="Please enter the email address of the sender whom you suspect to be suspicious."
+          />
+        </div>
+        <button className="button" type="button" onClick={verifyemail}>
+          Verify
+        </button>
+      </div>
+
+      {/* <div>
+        <input
+          className="issue"
+          type="text"
+          placeholder="Please provide a brief explanation of the scam you experienced."
+          style={{ width: "400px" }}
+        />
+      </div> */}
     </div>
   );
 }
+
+function verifyemail() {}
 
 export default App;
