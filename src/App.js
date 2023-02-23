@@ -1,6 +1,16 @@
+import { useState } from "react";
 import "./App.css";
+import { data } from "./data";
 
 function App() {
+  const [email, setEmail] = useState("");
+
+  function verifyemail() {
+    alert(data.has(email));
+    return data.has(email);
+    //valid or not valid
+  }
+
   return (
     <div className="App">
       <div>
@@ -13,8 +23,10 @@ function App() {
             className="email"
             text="email"
             placeholder="Please enter the email address of the sender whom you suspect to be suspicious."
+            onChange={(event) => setEmail(event.target.value.trim())}
           />
         </div>
+
         <button className="button" type="button" onClick={verifyemail}>
           Verify
         </button>
@@ -31,7 +43,5 @@ function App() {
     </div>
   );
 }
-
-function verifyemail() {}
 
 export default App;
